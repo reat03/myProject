@@ -1,75 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-body, html {
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-* {
-  box-sizing: border-box;
-}
-
-.bg-img {
-  /* The image used */
-  background-image: url("TG_background2.png");
-
-  min-height: 380px;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-/* Add styles to the form container */
-.container {
-  position: center;
-  right: 0;
-  margin: 20px;
-  max-width: 300px;
-  padding: 16px;
-  background-color: white;
-}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for the submit button */
-.btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.btn:hover {
-  opacity: 1;
-}
-
-</style>
 <head>
   <title>Thief go game</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
@@ -84,9 +24,10 @@ input[type=text]:focus, input[type=password]:focus {
         <ul class="dropdown-menu">
           <li><a href="aboutGame.html">Game</a></li>
           <li><a href="aboutUs.html">Our Group</a></li>
+          <li><a href="ContactUs.html">Contact Us</a></li>
         </ul>
       </li>
-      <li><a href="#">Play</a></li>
+      <li><a href="playPage.html">Play</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="registerPage.html"><span class="glyphicon glyphicon-user"></span> register</a></li>
@@ -98,18 +39,25 @@ input[type=text]:focus, input[type=password]:focus {
 
 
 
-    <form action="/action_page.php" class="container">
+    <form action="/action_page.php" class="container" id="login-form">
       <h1>Login</h1>
   
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+      <input type="text" placeholder="Enter Email" name="email" id="email" required>
   
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="psw" id="password" required>
   
+
+      <p>Don't have an account? <a href="registerPage.html">Register</a></p>
+
       <button type="submit" class="btn">Login</button>
     </form>
   </div>
 
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+  <script src="firebase.js"></script>
+  <script src="login.js"></script>
 </body>
 </html>

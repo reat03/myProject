@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Thief Go! About The Game</title>
+        <link rel="stylesheet" href="./login and menu_style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse" >
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Thief Go</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li ><a href="homepage.html">Home</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="AboutGame.html">Game</a></li>
+                        <li><a href="AboutTeam.html">Our Group</a></li>
+                        <li><a href="ContactUs.html">Contact Us</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="playPage.html">Play</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="registerPage.html"><span class="glyphicon glyphicon-user"></span> register</a></li>
+                    <li><a href="loginpage.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <h1>About The Game</h1>
+            <h2>Description</h2>
+            <p>
+                Thief Go! is a platformer attempting to emulate the feel of those older, classic games, but with some extra mechanics.<br>
+                <br>
+                <img src="./pageAssets/Fox.png" style="vertical-align: middle;"><br>
+                The main character is the fox, and true to their stereotypical cunning nature, it is attempting to steal things from landmarks around the world, e.g. the World Cup from Qatar or the Crown Jewels from the UK.<br>
+                <br>
+                To play, you must <a href="signuppagename.html">create an account</a> or <a href="loginpagename.html">login</a> first. There are two ways to do this, either singleplay or with a friend in multiplayer. To play either you just need to click the respective buttons.<br>
+                <br>
+                While playing, you may need to solve some basic puzzles, remember where certain doors are that might be linked to a boss' death and avoid enemies.<br>
+            </p>
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="FAQ">
+                <b>Is an account required?</b> <button onclick="revealText(0)" id="accReqButton">Show Answer</button><br>
+                <span id="accReqAnswer" style="display: none;">
+                    Yes an account is required to be able to play the game. This is required so as to track the progress of the player and how far through the game they get. It is also required to make the multiplayer work.
+                </span><br><br>
+                <b>How do I join a friend in multiplayer?</b> <button onclick="revealText(1)" id="multiButton">Show Answer</button><br>
+                <span id="multiAnswer" style="display: none">
+                    Click on play, then multiplayer then it will ask if you want to create a room or to join a room using a room code.<br>
+                    If you pick to create a room, you will be given a generated room code, then your friend should type that in.<br>
+                    If you're joining your friend by putting in a code yourself, they must have given you that first.
+                </span><br><br>
+            </div>
+            <script>
+                function revealText(buttonNum) {
+                    let buttonHTML;
+                    let answerHTML;
+                    switch (buttonNum) {
+                        case 0:
+                            buttonHTML = document.getElementById("accReqButton");
+                            answerHTML = document.getElementById("accReqAnswer");
+                            break;
+                        case 1:
+                            buttonHTML = document.getElementById("multiButton");
+                            answerHTML = document.getElementById("multiAnswer");
+                            break;
+                        default:
+                            return;
+                    }
+                    if (answerHTML.style.display == "none") {
+                        answerHTML.style.display = "inline";
+                        buttonHTML.innerHTML = "Hide Answer";
+                    } else {
+                        answerHTML.style.display = "none";
+                        buttonHTML.innerHTML = "Show Answer";
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>
